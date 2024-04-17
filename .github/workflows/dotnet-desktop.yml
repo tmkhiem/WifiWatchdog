@@ -81,6 +81,8 @@ jobs:
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      # D:\a\WifiWatchdog\WifiWatchdog\WlanWatchdog.csproj 
+      # run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      run: msbuild "D:\a\WifiWatchdog\WifiWatchdog\WlanWatchdog.csproj" /t:Restore /p:Configuration=$env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
